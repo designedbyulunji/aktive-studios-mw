@@ -14,18 +14,11 @@ html {
 }
 
 body {
-  background: linear-gradient(
-    to left top,
-    #1b2540,
-    #4f1440 40%,
-    #4f1440 50%,
-    #262240
-  );
+  background: linear-gradient(to left top, #1b2540, #4f1440 40%, #4f1440 50%, #262240);
   min-height: 100vh;
   width: 100%;
 }
 
-// Background Parent Layer
 .main {
   width: 80%;
   min-height: 80vh;
@@ -34,7 +27,6 @@ body {
   margin-inline: auto;
 }
 
-// Button Universal
 .btn {
   background: linear-gradient(to top right, #1b2540, #4f1440);
   border-radius: 60px;
@@ -45,21 +37,13 @@ body {
   padding: 15px 45px;
 }
 
-// Card One Universal
 .card-one {
-  background: linear-gradient(
-    to left top,
-    #1b2540,
-    #4f1440 40%,
-    #4f1440 50%,
-    #262240
-  );
+  background: linear-gradient(to left top, #1b2540, #4f1440 40%, #4f1440 50%, #262240);
   width: 45em;
   height: 25em;
   border-radius: 1.2em;
 }
 
-// Card Two Universal
 .card-two {
   background: linear-gradient(-40deg, #000000, #470000);
   border-radius: 1.2em;
@@ -68,25 +52,22 @@ body {
   width: 45em;
 }
 
-// Profile Universal
 .profile {
   height: 8em;
   width: 8em;
-
-  img {
-    border-radius: 50%;
-    filter: drop-shadow(0 0 8px #b61b90);
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
 }
-
-// Pricing Card
+.profile img {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px #b61b90);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
 
 .pricing-card {
   background: linear-gradient(-45deg, #ee3dfb, #ffffff);
   border-radius: 1.2em;
   height: 35em;
   width: 30em;
-}
+}/*# sourceMappingURL=styles.css.map */

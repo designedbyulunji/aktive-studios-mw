@@ -19,6 +19,80 @@ body {
   width: 100%;
 }
 
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.hero-section__main-container {
+  background: #000000;
+  border-radius: 1.2em;
+  height: 90vh;
+  width: 80%;
+  display: grid;
+  grid-template-areas: "hero-section--left hero-section--right";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+}
+.hero-section__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100px;
+  padding: 0 5em;
+  position: relative;
+  overflow-x: hidden;
+}
+.hero-section__nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  transition: all 500ms ease;
+  transform: translateX(1000px);
+}
+.hero-section__nav-links li {
+  margin: 0 2em;
+}
+.hero-section__nav-links li a {
+  padding: 0;
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #ffffff;
+}
+.hero-section__nav-icon {
+  background: url("/project-assets/icons/menu.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+
+.hero-section--left {
+  background: url("/project-assets/images/Display.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1.2em 0 0 1.2em;
+  border: none;
+}
+
+.hero-section--right {
+  background: url("/project-assets/images/adobe-products-on-tablet.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 1.2em 1.2em 0;
+  border: none;
+}
+
 .main {
   width: 80%;
   min-height: 80vh;

@@ -80,13 +80,24 @@ body {
   }
 
   &__nav-icon {
-    background: url("/project-assets/icons/menu.png");
+    background-image: url("/project-assets/icons/menu.png");
     @include background_presets;
     cursor: pointer;
     width: 30px;
     height: 30px;
     filter: invert(1);
+    transition: $transition;
   }
+}
+
+.hero-section__nav-icon.nav--icon {
+  background-image: url("/project-assets/icons/close.png");
+  @include background_presets;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: $transition;
 }
 
 .hero-section--left {
@@ -101,6 +112,37 @@ body {
   @include background_presets;
   border-radius: 0 1.2em 1.2em 0;
   border: none;
+  position: relative;
+}
+
+.hero-section__btn-timer {
+  @include flex_display;
+  width: 100%;
+  margin-bottom: 2em;
+  justify-content: space-between;
+  padding: 0 5em;
+  position: absolute;
+  bottom: 0;
+  // background: #d4d4d4;
+}
+
+.glow {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background: rgb(23, 252, 23);
+  box-shadow: 0 0 8px 2px #ffffff;
+  border: none;
+  @include flex_display;
+
+  &__inner-circle {
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border: none;
+    border-radius: 100%;
+    filter: opacity(0.5);
+  }
 }
 
 // Background Parent Layer

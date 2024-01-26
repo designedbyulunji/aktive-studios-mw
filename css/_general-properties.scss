@@ -1,1 +1,19 @@
 $transition: all 250ms ease-in-out 50ms;
+
+@mixin hero_section_bottom {
+  @include flex_display;
+  bottom: 0;
+  height: auto;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  padding: 0 5em;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin title {
+  color: $text-color-primary;
+  font-size: 4em;
+  font-weight: 700;
+  position: relative;
+}

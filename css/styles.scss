@@ -8,7 +8,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -31,6 +31,72 @@ body {
   width: 100%;
 }
 
+// Background Parent Layer
+.main {
+  width: 80%;
+  // min-height: 80vh;
+  background-color: #551c5c;
+  // mix-blend-mode: color-dodge;
+  margin-inline: auto;
+}
+
+// Button Universal
+.btn {
+  background: linear-gradient(to top right, #1b2540, #4f1440);
+  border-radius: 60px;
+  border: none;
+  color: #d4d4d4;
+  font-size: 2em;
+  font-weight: 500;
+  padding: 15px 45px;
+}
+
+// Card One Universal
+.card-one {
+  background: linear-gradient(
+    to left top,
+    #1b2540,
+    #4f1440 40%,
+    #4f1440 50%,
+    #262240
+  );
+  // width: 45em;
+  height: 25em;
+  border-radius: $border_radius_sm;
+}
+
+// Card Two Universal
+.card-two {
+  background: linear-gradient(-40deg, #000000, #470000);
+  border-radius: $border_radius_lg;
+  height: 25em;
+  mix-blend-mode: difference;
+  width: 45em;
+}
+
+// Profile Universal
+.profile {
+  height: 8em;
+  width: 8em;
+
+  img {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px #b61b90);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+// Pricing Card
+
+.pricing-card {
+  background: linear-gradient(-45deg, #ee3dfb, #ffffff);
+  border-radius: $border_radius_lg;
+  height: 35em;
+  width: 30em;
+}
+
 // Hero Section
 .hero-section {
   @include flex_display;
@@ -38,7 +104,8 @@ body {
   width: 100%;
 
   &__main-container {
-    background: #000000;
+    // background: #000000;
+    box-shadow: 0 0 8px #292929;
     border-radius: $border_radius_lg;
     height: 90vh;
     width: 80%;
@@ -102,9 +169,19 @@ body {
 
 .hero-section--left {
   background: url("/project-assets/images/Display.jpg");
+
+  // background: linear-gradient(
+  //   to left top,
+  //   #1b2540,
+  //   #4f1440 40%,
+  //   #4f1440 50%,
+  //   #262240
+  // );
+
   @include background_presets;
   border-radius: 1.2em 0 0 1.2em;
   border: none;
+  position: relative;
 }
 
 .hero-section--right {
@@ -117,96 +194,163 @@ body {
 
 .hero-section__btn-timer {
   @include flex_display;
-  width: 100%;
-  margin-bottom: 2em;
-  justify-content: space-between;
-  padding: 0 5em;
-  position: absolute;
-  bottom: 0;
-  // background: #d4d4d4;
+  @include hero_section_bottom;
 }
 
 .glow {
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-  background: rgb(23, 252, 23);
-  box-shadow: 0 0 8px 2px #ffffff;
-  border: none;
   @include flex_display;
+  background: rgb(23, 252, 23);
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0 0 10px 2px rgb(23, 252, 23);
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: bubble_glow 4s alternate 0ms infinite;
+  transition: $transition;
 
   &__inner-circle {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: #ffffff;
     border: none;
     border-radius: 100%;
-    filter: opacity(0.5);
+    filter: opacity(0.8);
   }
 }
 
-// Background Parent Layer
-.main {
-  width: 80%;
-  min-height: 80vh;
-  background-color: #34234d;
-  mix-blend-mode: color-dodge;
-  margin-inline: auto;
+// GLOW CLOSED
+.glow.close {
+  animation: none;
+  box-shadow: none;
+  background: #262240;
 }
 
-// Button Universal
-.btn {
-  background: linear-gradient(to top right, #1b2540, #4f1440);
-  border-radius: 60px;
-  border: none;
-  color: #d4d4d4;
-  font-size: 2em;
+.glow__inner-circle.close {
+  background: #b61b90;
+}
+
+// Glow Animation
+@keyframes bubble_glow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px 3px rgb(23, 252, 23);
+    filter: hue-rotate(220deg);
+    // filter: hue-rotate(180deg);
+    transform: scale(1.19);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn--book-now {
+  cursor: pointer;
+}
+
+.hero-section__social-media-icons {
+  @include flex_display;
+  align-items: flex-end;
+  @include hero_section_bottom;
+  justify-content: center;
+}
+
+.social-media {
+  filter: invert(1);
+  height: 30px;
+  margin: 0 2em;
+  transition: $transition;
+  width: 30px;
+
+  &:hover {
+    transform: translateY(-5px);
+    filter: invert(50);
+    opacity: 0.5;
+  }
+}
+
+// Main Section
+
+.main__service-overview {
+  display: grid;
+  grid-template-areas:
+    "service-overview__title service-overview__title"
+    "service-overview__graphic-design service-overview__photography"
+    "service-overview__web-development service-overview__videography";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, auto));
+  padding: 2em 5em;
+  gap: 1em;
+
+  // border: 5px solid salmon;
+  margin: 50px;
+}
+
+.service-overview__title {
+  @include title;
+  @include background_presets;
+  grid-area: service-overview__title;
+}
+
+.service-overview__graphic-design {
+  background: url("/project-assets/images/adobe-products-on-tablet.jpg");
+  @include background_presets;
+  grid-area: service-overview__graphic-design;
+
+  position: relative;
+}
+
+.service-overview__photography {
+  background: url("/project-assets/images/photography-studio.jpg");
+  @include background_presets;
+  grid-area: service-overview__photography;
+
+  position: relative;
+}
+
+.service-overview__web-development {
+  background: url("/project-assets/images/web-development.jpg");
+  @include background_presets;
+  grid-area: service-overview__web-development;
+
+  position: relative;
+}
+
+.service-overview__videography {
+  background: url("/project-assets/images/videography.jpg");
+  @include background_presets;
+  grid-area: service-overview__videography;
+
+  position: relative;
+}
+
+.service-overview__inner-container {
+  @include flex_display;
+  bottom: 0.5em;
+  justify-content: space-between;
+  padding: 0 2.5em;
+  position: absolute;
+  width: 100%;
+}
+
+.inner-container__right-arrow {
+  width: 40px;
+  position: relative;
+  transition: $transition;
+
+  &:hover {
+    transform: translateX(5px);
+    filter: invert(1);
+  }
+}
+
+.inner-container__title {
+  @include title;
+  font-size: 3em;
   font-weight: 500;
-  padding: 15px 45px;
-}
-
-// Card One Universal
-.card-one {
-  background: linear-gradient(
-    to left top,
-    #1b2540,
-    #4f1440 40%,
-    #4f1440 50%,
-    #262240
-  );
-  width: 45em;
-  height: 25em;
-  border-radius: $border_radius_lg;
-}
-
-// Card Two Universal
-.card-two {
-  background: linear-gradient(-40deg, #000000, #470000);
-  border-radius: $border_radius_lg;
-  height: 25em;
-  mix-blend-mode: difference;
-  width: 45em;
-}
-
-// Profile Universal
-.profile {
-  height: 8em;
-  width: 8em;
-
-  img {
-    border-radius: 50%;
-    filter: drop-shadow(0 0 8px #b61b90);
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
-}
-
-// Pricing Card
-
-.pricing-card {
-  background: linear-gradient(-45deg, #ee3dfb, #ffffff);
-  border-radius: $border_radius_lg;
-  height: 35em;
-  width: 30em;
+  transition: $transition;
 }

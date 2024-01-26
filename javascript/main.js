@@ -21,3 +21,21 @@ function switchIcon() {
   }
 
 }
+
+/* GLOW ELEMENT */
+
+const glowEl = document.querySelector(".glow");
+const innerCircleEl = document.querySelector(".glow__inner-circle");
+
+const currentDate = new Date();
+const currentHour = currentDate.getHours();
+
+if (currentHour >= 8 && currentHour <= 17) {
+  glowEl.classList.remove("close");
+  innerCircleEl.classList.remove("close");
+}
+else {
+  glowEl.classList.add("close");
+  innerCircleEl.classList.add("close");
+  glowEl.setAttribute("title", "We are closed")
+}

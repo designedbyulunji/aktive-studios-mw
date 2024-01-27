@@ -42,16 +42,14 @@ body {
 }
 
 .card-two {
-  background: linear-gradient(-40deg, #000000, #470000);
-  border-radius: 1.2em;
+  background: linear-gradient(-40deg, #441a5c, #18185c);
+  border-radius: 0.8em;
   height: 25em;
-  mix-blend-mode: difference;
-  width: 45em;
 }
 
 .profile {
-  height: 8em;
-  width: 8em;
+  height: 10em;
+  width: 10em;
 }
 .profile img {
   border-radius: 50%;
@@ -262,17 +260,14 @@ body {
   grid-template-rows: repeat(3, minmax(0, auto));
   padding: 2em 5em;
   gap: 1em;
-  margin: 50px;
 }
 
 .service-overview__title {
   color: #ffffff;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 700;
   position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  text-align: center;
   grid-area: service-overview__title;
 }
 
@@ -335,10 +330,298 @@ body {
 
 .inner-container__title {
   color: #ffffff;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 700;
   position: relative;
+  text-align: center;
   font-size: 3em;
   font-weight: 500;
   transition: all 250ms ease-in-out 50ms;
+}
+
+.main__products-services {
+  display: grid;
+  grid-template-areas: "products-services__title products-services__title" "products-services__graphic-design-icon products-services__graphic-design-description" "products-services__social-media-description products-services__social-media-icon" "products-services__photography-icon products-services__photography-description" "products-services__videography-description products-services__videography-icon" "products-services__web-development-icon products-services__web-development-description";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, auto));
+  padding: 2em 5em;
+  gap: 1em;
+}
+
+.products-services__title {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  grid-area: products-services__title;
+}
+
+.products-services__graphic-design-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: products-services__graphic-design-icon;
+}
+
+.products-services__graphic-design-description {
+  grid-area: products-services__graphic-design-description;
+}
+
+.products-services__social-media-description {
+  grid-area: products-services__social-media-description;
+}
+
+.products-services__social-media-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: products-services__social-media-icon;
+}
+
+.products-services__photography-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: products-services__photography-icon;
+}
+
+.products-services__photography-description {
+  grid-area: products-services__photography-description;
+}
+
+.products-services__videography-description {
+  grid-area: products-services__videography-description;
+}
+
+.products-services__videography-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: products-services__videography-icon;
+}
+
+.products-services__web-development-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-area: products-services__web-development-icon;
+}
+
+.products-services__web-development-description {
+  grid-area: products-services__web-development-description;
+}
+
+.product-services__icon {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 2em;
+}
+
+.product-services-description__title {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  text-align: left;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  color: #8dd4d4;
+}
+
+.product-services-description {
+  font-size: 1.8em;
+  text-align: justify;
+  color: #8dd4d4;
+}
+
+.product-services__inner-container {
+  padding: 2.5em;
+}
+
+.main__clients {
+  background: linear-gradient(-40deg, #441a5c, #18185c);
+  margin: 0em 5em;
+  height: auto;
+  border-radius: 0.8em;
+  display: grid;
+  grid-template-areas: "clients__tittle clients__tittle clients__tittle clients__tittle" "client__logo-1 client__logo-2 client__logo-3 client__logo-4" "client__logo-5 client__logo-6 client__logo-7 client__logo-8";
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, auto));
+  padding: 2em 0;
+  gap: 1em;
+}
+
+.clients__tittle {
+  grid-area: clients__tittle;
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+}
+
+.client__logo {
+  width: 10em;
+  height: 10em;
+  margin: 2em 0;
+  justify-self: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.client__logo-1 {
+  grid-area: client__logo-1;
+}
+
+.client__logo-2 {
+  grid-area: client__logo-2;
+}
+
+.client__logo-3 {
+  grid-area: client__logo-3;
+}
+
+.client__logo-4 {
+  grid-area: client__logo-4;
+}
+
+.client__logo-5 {
+  grid-area: client__logo-5;
+}
+
+.client__logo-6 {
+  grid-area: client__logo-6;
+}
+
+.client__logo-7 {
+  grid-area: client__logo-7;
+}
+
+.client__logo-8 {
+  grid-area: client__logo-8;
+}
+
+.main__testmonials {
+  display: grid;
+  grid-template-areas: "testmonials__title testmonials__title" "testmonials__card-1 testmonials__card-2" "testmonials__card-3 testmonials__card-4";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, auto));
+  padding: 2em 5em;
+  gap: 1em;
+}
+
+.testmonials__title {
+  grid-area: testmonials__title;
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+}
+
+.testmonials__card-1 {
+  grid-area: testmonials__card-1;
+}
+
+.testmonials__card-2 {
+  grid-area: testmonials__card-2;
+}
+
+.testmonials__card-3 {
+  grid-area: testmonials__card-3;
+}
+
+.testmonials__card-4 {
+  grid-area: testmonials__card-4;
+}
+
+.testmonial__profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em 5em;
+}
+
+.testmonial__profile__full-name {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  text-align: left;
+  font-size: 2.5em;
+}
+
+.testmonial__profile__company-name {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  text-align: left;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.testmonial__description {
+  color: #ffffff;
+  text-align: justify;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  padding: 0 3.5em;
+}
+
+.footer {
+  display: grid;
+  grid-template-areas: "footer__address hero-section__social-media-icons--footer footer__copyright";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(1, minmax(0, auto));
+  justify-content: space-between;
+  padding: 2em 5em;
+  width: 80%;
+  background: linear-gradient(to left top, #1b2540, #4f1440 40%, #4f1440 50%, #262240);
+  margin-inline: auto;
+}
+
+.footer__address {
+  grid-area: footer__address;
+  justify-self: center;
+}
+
+.hero-section__social-media-icons--footer {
+  justify-self: center;
+  grid-area: hero-section__social-media-icons--footer;
+}
+
+.footer__copyright {
+  grid-area: footer__copyright;
+  justify-self: center;
+  align-self: center;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+.address__title {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  -moz-text-align-last: left;
+       text-align-last: left;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.address__description {
+  color: #ffffff;
+  text-align: justify;
+  font-size: 1.5em;
+}
+
+.hero-section__social-media-icons--footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }/*# sourceMappingURL=styles.css.map */

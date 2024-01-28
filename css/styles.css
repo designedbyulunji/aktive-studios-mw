@@ -118,8 +118,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   filter: invert(1);
   transition: all 250ms ease-in-out 50ms;
 }
@@ -130,8 +130,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   filter: invert(1);
   transition: all 250ms ease-in-out 50ms;
 }
@@ -144,6 +144,7 @@ body {
   border-radius: 1.2em 0 0 1.2em;
   border: none;
   position: relative;
+  transition: all 250ms ease-in-out 50ms;
 }
 
 .hero-section--right {
@@ -253,6 +254,65 @@ body {
   opacity: 0.5;
 }
 
+.hero-section__logo {
+  display: none;
+  height: 5em;
+  width: 5em;
+  transition: all 250ms ease-in-out 50ms;
+}
+.hero-section__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  transition: all 250ms ease-in-out 50ms;
+  filter: drop-shadow(0 0 8px rgba(182, 27, 144, 0.5));
+}
+
+@media (max-width: 1080px) {
+  .hero-section__nav {
+    padding: 2em 2em;
+  }
+  .hero-section__nav-links li {
+    margin: 0 1em;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section__main-container {
+    box-shadow: 0 0 8px #292929;
+    border-radius: 0.8em;
+    height: 90vh;
+    width: 95%;
+    display: grid;
+    grid-template-areas: "hero-section--right";
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .hero-section--left {
+    display: none;
+    transition: all 250ms ease-in-out 50ms;
+  }
+  .hero-section--right {
+    border-radius: 0.8em;
+  }
+  .btn {
+    background: linear-gradient(to top right, #1b2540, #4f1440);
+    border-radius: 60px;
+    border: none;
+    color: #d4d4d4;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 15px 35px;
+  }
+  .hero-section__logo {
+    display: inline-block;
+  }
+  .hero-section__nav {
+    justify-content: space-between;
+    background: linear-gradient(to top right, rgba(27, 37, 64, 0.8), rgba(79, 20, 64, 0.8));
+  }
+}
 .main__service-overview {
   display: grid;
   grid-template-areas: "service-overview__title service-overview__title" "service-overview__graphic-design service-overview__photography" "service-overview__web-development service-overview__videography";

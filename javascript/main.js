@@ -39,3 +39,25 @@ else {
   innerCircleEl.classList.add("close");
   glowEl.setAttribute("title", "We are closed")
 }
+
+/* DROPDOWN */
+
+const dropDownEl = document.querySelector(".dropdown");
+const heroNavEl = document.querySelector(".hero-section__nav");
+const dropDownParentEl = document.querySelector(".dropdown-parent");
+
+
+function addClass() {
+  dropDownEl.classList.add("active");
+  heroNavEl.classList.add("view-overflow");
+
+}
+
+function removeClass() {
+  dropDownEl.classList.remove("active");
+  heroNavEl.classList.remove("view-overflow");
+
+}
+
+dropDownParentEl.addEventListener("mouseover", addClass);
+dropDownParentEl.addEventListener("mouseout", removeClass);

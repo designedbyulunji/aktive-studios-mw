@@ -17,6 +17,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
   width: 80%;
   // min-height: 80vh;
   background-color: #551c5c;
+  // background-color: #e3dfde;
   // mix-blend-mode: color-dodge;
   margin-inline: auto;
 }
@@ -67,7 +69,7 @@ body {
 
 // Card Two Universal
 .card-two {
-  background: linear-gradient(-40deg, #441a5c, #18185c);
+  // background: linear-gradient(-40deg, #441a5c, #18185c);
   border-radius: $border_radius_sm;
   height: 25em;
   // mix-blend-mode: difference;
@@ -91,10 +93,11 @@ body {
 // Pricing Card
 
 .pricing-card {
-  background: linear-gradient(-45deg, #ee3dfb, #ffffff);
+  background: linear-gradient(-45deg, #ee3dfb, #ffffff 50%);
   border-radius: $border_radius_lg;
   height: 35em;
-  width: 30em;
+  // width: 30em;
+  position: relative;
 }
 
 // Hero Section
@@ -742,4 +745,158 @@ body {
 .hero-section__social-media-icons--footer {
   @include flex_display;
   align-self: center;
+}
+
+// GRAPHICS PAGE STYLES
+
+.hero-section__main-container--services {
+  display: grid;
+  grid-template-areas: "hero-section--right";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+.hero-section--right--services {
+  background: url("/project-assets/images/adobe-products-on-monitor.jpg");
+  @include background_presets;
+  border-radius: 1.2em;
+}
+
+.hero-section__logo--services {
+  display: block;
+}
+
+.hero-section__nav--services {
+  justify-content: space-between;
+}
+
+.hero-section__btn-timer--services {
+  justify-content: space-between;
+}
+
+// GRAPHICS PRICING
+.main__pricing {
+  display: grid;
+  grid-template-areas:
+    "pricing__title pricing__title pricing__title"
+    "pricing__card-basic pricing__card-standard pricing__card-premium";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, auto));
+
+  padding: 2em 5em;
+  gap: 1em;
+}
+
+.pricing__title {
+  grid-area: pricing__title;
+  margin-bottom: 1em;
+  @include title;
+}
+
+.pricing__card-basic {
+  grid-area: pricing__card-basic;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-basic__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1em;
+  padding: 1em 0;
+}
+
+.basic-header__title {
+  @include title;
+  color: #262240;
+}
+
+.basic-header__price {
+  font-size: 2.5em;
+  color: #262240;
+}
+
+.card-basic__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 2em 0;
+
+  ul {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #262240;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+}
+
+.basic-main__title {
+  @include title;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.25em 2em;
+  border-radius: 0.25em;
+  background: #3a0e2f;
+  margin-top: -20px;
+}
+
+.card-basic__footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.basic-footer__title {
+  @include title;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.card-basic__footer {
+  background: #3a0e2f;
+  border-radius: 0 0 1.1em 1.1em;
+}
+
+.pricing__card-standard {
+  grid-area: pricing__card-standard;
+}
+
+.pricing__card-premium {
+  grid-area: pricing__card-premium;
+}
+
+// LOGOS
+.main__logos {
+  padding: 2em 5em;
+
+  display: grid;
+  grid-template-areas:
+    "logos__title logos__title logos__title"
+    "logos__description-container logos__description-container logos__description-container"
+    "logos__example logos__example logos__example";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, auto));
+}
+
+.logos__title {
+  @include title;
+  grid-area: logos__title;
+}
+
+.logos__description-container {
+  grid-area: logos__description-container;
+  // height: 10em;
+}
+
+.logos__example {
+  grid-area: logos__example;
+  height: 10em;
 }

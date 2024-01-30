@@ -69,9 +69,9 @@ body {
 
 // Card Two Universal
 .card-two {
-  // background: linear-gradient(-40deg, #441a5c, #18185c);
+  background: linear-gradient(-40deg, #441a5c, #18185c);
   border-radius: $border_radius_sm;
-  height: 25em;
+  // height: 25em;
   // mix-blend-mode: difference;
   // width: 45em;
 }
@@ -884,6 +884,8 @@ body {
     "logos__example logos__example logos__example";
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, auto));
+
+  gap: 2em;
 }
 
 .logos__title {
@@ -894,9 +896,139 @@ body {
 .logos__description-container {
   grid-area: logos__description-container;
   // height: 10em;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  img {
+    border-radius: 1em;
+    height: 350px;
+    min-width: 450px;
+    object-fit: cover;
+    padding: 2em;
+  }
+}
+
+.description-container__description {
+  padding: 2em;
+
+  h2 {
+    @include title;
+    text-align-last: left;
+  }
+  P {
+    color: #ffffff;
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    text-align: justify;
+  }
 }
 
 .logos__example {
+  display: flex;
   grid-area: logos__example;
-  height: 10em;
+  justify-content: space-between;
+  // height: 10em;
+
+  img {
+    min-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    // padding: 2em;
+    border-radius: $border_radius_sm;
+  }
+}
+
+// ADVERTS
+
+.main__adverts {
+  display: grid;
+  grid-template-areas:
+    "adverts__title adverts__title adverts__title"
+    "adverts__description-container adverts__description-container adverts__description-container"
+    "adverts__example adverts__example adverts__example";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, auto));
+
+  gap: 2em;
+  padding: 2em 5em;
+}
+
+.adverts__title {
+  @include title;
+  grid-area: adverts__title;
+}
+
+.adverts__description-container {
+  grid-area: adverts__description-container;
+  // height: 20em;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+.adverts__description-container__description {
+  padding: 2em;
+
+  h2 {
+    @include title;
+    text-align-last: left;
+  }
+  P {
+    color: #ffffff;
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    text-align: justify;
+  }
+}
+
+.adverts {
+  width: 800px;
+  height: 400px;
+}
+
+.adverts__example {
+  grid-area: adverts__example;
+  height: 20em;
+}
+
+// PHOTOGRAPHY
+.hero-section--right--photography {
+  background: url("/project-assets/images/photography-banner.jpg");
+  @include background_presets;
+  border-radius: 1.2em;
+}
+
+.main__pricing {
+  display: grid;
+  grid-template-areas:
+    "pricing__title pricing__title pricing__title"
+    "pricing__basic-card pricing__standard-card pricing__premium-card";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, auto));
+}
+
+.pricing__title {
+  grid-area: pricing__title;
+  @include title;
+}
+
+.pricing__basic-card {
+  grid-area: pricing__basic-card;
+  height: 40em;
+  background: #d4d4d4;
+  border-radius: $border_radius_lg;
+}
+
+.pricing__standard-card {
+  grid-area: pricing__standard-card;
+  height: 40em;
+  background: #d4d4d4;
+  border-radius: $border_radius_lg;
+}
+
+.pricing__premium-card {
+  grid-area: pricing__premium-card;
+  height: 40em;
+  background: #d4d4d4;
+  border-radius: $border_radius_lg;
 }

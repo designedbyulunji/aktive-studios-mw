@@ -30,7 +30,7 @@ const innerCircleEl = document.querySelector(".glow__inner-circle");
 const currentDate = new Date();
 const currentHour = currentDate.getHours();
 
-if (currentHour >= 8 && currentHour <= 17) {
+if (currentHour >= 8 && currentHour <= 16) {
   glowEl.classList.remove("close");
   innerCircleEl.classList.remove("close");
 }
